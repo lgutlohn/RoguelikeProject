@@ -3,6 +3,8 @@ using System.Collections;
 
 public class CannonControls : MonoBehaviour {
 
+	private float nextFireTime;
+	public float reloadTime = 1f;
 		public float cannonPower = 100f;
 		public GUIText rotText;
 		public GUIText velText;
@@ -50,13 +52,11 @@ public class CannonControls : MonoBehaviour {
 			cannonPower--;
 		}
 	
-			if(Input.GetKeyDown(KeyCode.LeftShift))
+		if(Time.time >= nextFireTime && Input.GetKeyDown(KeyCode.LeftShift))
  
                     {
- 
+			FireProjectile ();  
 		 
-			GameObject clone = Instantiate (Bullet, CannonBulletSpawn.transform.position, transform.rotation ) as GameObject ;
-			clone.rigidbody.AddForce(CannonBulletSpawn.transform.forward * cannonPower);
                     }
 
 		string rotString = rigidbody.rotation.eulerAngles.y.ToString();
@@ -72,6 +72,16 @@ public class CannonControls : MonoBehaviour {
 		if ((velString.IndexOf(".") > -1) && (velString.Length>velString.IndexOf(".")+ 4)) {
 			velText.text = "Velocity: " + velString.Substring(0, velString.IndexOf(".") ) + velString.Substring(velString.IndexOf("."), 3);
 		}
+	}
+	void FireProjectile()
+	{
+		
+		GameObject clone = Instantiate (Bullet, CannonBulletSpawn.transform.position, transform.rotation ) as GameObject ;
+		clone.rigidbody.AddForce(CannonBulletSpawn.transform.forward * cannonPower);
+
+		nextFireTime = Time.time+reloadTime;
+
+
 	}
 
  
