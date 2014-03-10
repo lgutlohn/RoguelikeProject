@@ -15,6 +15,6 @@ public class Bounce : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision) {
 		// Invert the velocity
-		rigidbody.velocity = rigidbody.velocity * -1.0f;
+		rigidbody.velocity *= 10.0f;
 	}
 }
