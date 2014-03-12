@@ -6,12 +6,12 @@ public class Teleport : MonoBehaviour
 	public Transform exit;
 	static Transform last;
 	
-	void OnTriggerEnter ( Collider other )
+	void OnTriggerEnter ( Collider Player )
 	{
 		if ( exit == last )
 			return;
 		
-		TeleportToExit( other );
+		TeleportToExit( Player );
 	}
 	
 	void OnTriggerExit ( )
@@ -20,9 +20,9 @@ public class Teleport : MonoBehaviour
 			last = null;
 	}
 	
-	void TeleportToExit ( Collider other )
+	void TeleportToExit ( Collider Player )
 	{
 		last = transform;
-		other.transform.position = exit.transform.position;
+		Player.transform.position = exit.transform.position;
 	}
 }

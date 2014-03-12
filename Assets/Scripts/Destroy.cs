@@ -15,9 +15,9 @@ public class Destroy : MonoBehaviour {
 
 	}
 	
-	void OnTriggerEnter(Collider other) {
+	void OnTriggerEnter(Collider Player) {
 		//Destroy(other.gameObject);
-		if(other.gameObject){
+		if(Player.gameObject){
 			if(sphere){
 				//Instantiate(sphere, (transform.position), transform.rotation);
 				Destroy(gameObject);

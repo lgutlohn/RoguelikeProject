@@ -3,7 +3,7 @@ using System.Collections;
 
 public class generat0r : MonoBehaviour {
 	
-	public Transform Capsule, Cube, Cylinder, Sphere;
+	public Transform Capsule, Cube, Cylinder, Sphere, Cube2;
 	public int counter1 = 0;
 	public int gridSize = 30;
 	public int gridIncrement = 5;
@@ -60,7 +60,23 @@ public class generat0r : MonoBehaviour {
 			Instantiate (Sphere, new Vector3(Random.Range(-1,-gridSize), 1f, (Random.Range (-1,-gridSize))), Quaternion.identity);
 			counter2++;
 		}
-		
+
+		for (int i = gridSize; i >= 0; i-=gridIncrement) {
+			if (counter1 == 10){
+				break;
+			}
+			for (int j = -1; j >= -gridSize; j-= gridIncrement){
+				float randomnumber = Random.Range (0f, 100f);
+				if (randomnumber > 90f){
+					Instantiate (Cube2, new Vector3(i, 1f, j), Quaternion.identity);
+					counter1++;
+					//Debug.Log("Counter = " + counter1);
+				}
+				if (counter1 == 10){
+					break;
+				}
+			}
+		}
 		
 	}
 	
