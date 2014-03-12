@@ -15,13 +15,13 @@ public class Destroy : MonoBehaviour {
 
 	}
 	
-	void OnTriggerEnter(Collider Player) {
+	void OnTriggerEnter(Collider other) {
 		//Destroy(other.gameObject);
-		if(Player.gameObject){
-			if(sphere){
+		if(other.tag == "Player"){
+			//if(sphere){
 				//Instantiate(sphere, (transform.position), transform.rotation);
 				Destroy(gameObject);
-			}		
+			//}		
 		}
 	}
 }
