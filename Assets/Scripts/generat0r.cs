@@ -62,7 +62,7 @@ public class generat0r : MonoBehaviour {
 //		}
 		//use for an exact number of objects
 		//randomly spawns set number of an object within an area
-		while (counter2 < 50){
+		while (counter2 < 10){
 			Instantiate (Object4, new Vector3(Random.Range(xMax,xMin), 10f, (Random.Range (zMax,zMin))), Quaternion.Euler (0f, Random.Range (0f, 360f), 0f));
 			counter2++;
 		}
