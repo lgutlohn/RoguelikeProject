@@ -40,12 +40,12 @@ public class CannonControls : MonoBehaviour {
 			
 			
 		}
-		if(Input.GetKey(KeyCode.A)){
-			transform.Rotate(0f,-5f*rotationSpeed,0f);
+		if(Input.GetKey(KeyCode.A)&& transform.rotation.eulerAngles.y>1){
+			transform.Rotate(0f,-5f*rotationSpeed*Time.deltaTime,0f);
 		}
 		
-		if(Input.GetKey(KeyCode.D)){
-			transform.Rotate(0f,5f*rotationSpeed,0f);
+		if(Input.GetKey(KeyCode.D)&& transform.rotation.eulerAngles.y<180){
+			transform.Rotate(0f,5f*rotationSpeed*Time.deltaTime,0f);
 		}
 		
 		if(Input.GetKey(KeyCode.S)){
