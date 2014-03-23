@@ -3,12 +3,13 @@ using System.Collections;
 
 public class generat0r : MonoBehaviour {
 	
-	public Transform Capsule, Cube, Cylinder, Sphere;
+	public Transform Capsule, Cube, Cylinder, Sphere, BoostPad;
 	public int counter1 = 0;
 	public int gridSize = 30;
 	public int gridIncrement = 5;
 	
 	int counter2 = 0;
+	int boostCounter = 0;
 	
 	// Use this for initialization
 	void Start () {
@@ -60,7 +61,11 @@ public class generat0r : MonoBehaviour {
 			Instantiate (Sphere, new Vector3(Random.Range(-1,-gridSize), 1f, (Random.Range (-1,-gridSize))), Quaternion.identity);
 			counter2++;
 		}
-		
+		while (boostCounter < 10){
+			Instantiate (BoostPad, new Vector3(Random.Range(-gridSize,gridSize), -1f, (Random.Range (-gridSize,gridSize))), Quaternion.Euler(new Vector3(0,Random.Range(90,270),0)));
+
+			boostCounter++;
+		}
 		
 	}
 	
