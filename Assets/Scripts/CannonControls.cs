@@ -9,7 +9,7 @@ public class CannonControls : MonoBehaviour {
 		public GUIText rotText;
 		public GUIText velText;
 		public float rayDistance = 25f;
-		public float rotationSpeed = 5f;
+		public float rotationSpeed = 1.5f;
         public Transform target = null;
  		public Transform CannonBulletSpawn;
  	//private Quaternion desiredRotation;
@@ -41,18 +41,18 @@ public class CannonControls : MonoBehaviour {
 			
 		}
 		if(Input.GetKey(KeyCode.A)){
-			transform.Rotate(0f,-5f*rotationSpeed,0f);
+			transform.Rotate(0f,-rotationSpeed,0f);
 		}
 		
 		if(Input.GetKey(KeyCode.D)){
-			transform.Rotate(0f,5f*rotationSpeed,0f);
+			transform.Rotate(0f,rotationSpeed,0f);
 		}
 		
 		if(Input.GetKey(KeyCode.S)){
 			cannonPower--;
 		}
 	
-		if(Time.time >= nextFireTime && Input.GetKeyDown(KeyCode.LeftShift))
+		if(Time.time >= nextFireTime && Input.GetKeyDown(KeyCode.Space))
  
                     {
 			FireProjectile ();  
