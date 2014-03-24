@@ -12,11 +12,17 @@ public class CannonControls : MonoBehaviour {
 		public float rotationSpeed = 5f;
         public Transform target = null;
  		public Transform CannonBulletSpawn;
+	public bool fired = false;
+	public int shotsLeft;
+	public GUIText shotsText;
+	public GUIText scoreText;
+	public float scoreAdjust;
  	//private Quaternion desiredRotation;
  		public GameObject Bullet;
             // Use this for initialization
  
             void Start () {
+		scoreAdjust = 0 - transform.position.z;
  
  
             }
@@ -35,7 +41,7 @@ public class CannonControls : MonoBehaviour {
 			
 		}
 */
-		if(Input.GetKey(KeyCode.W)){
+		if(Input.GetKey(KeyCode.W)&&(cannonPower<2000)){
 			cannonPower++;
 			
 			
@@ -52,12 +58,15 @@ public class CannonControls : MonoBehaviour {
 			cannonPower--;
 		}
 	
-		if(Time.time >= nextFireTime && Input.GetKeyDown(KeyCode.LeftShift))
+		if(Input.GetKeyDown(KeyCode.Space) && !fired && shotsLeft>0)
  
-                    {
-			FireProjectile ();  
+       	{
+
+			FireProjectile ();
+			fired=true;
+			shotsLeft--;
 		 
-                    }
+        }
 
 		string rotString = rigidbody.rotation.eulerAngles.y.ToString();
 		
@@ -72,6 +81,11 @@ public class CannonControls : MonoBehaviour {
 		if ((velString.IndexOf(".") > -1) && (velString.Length>velString.IndexOf(".")+ 4)) {
 			velText.text = "Velocity: " + velString.Substring(0, velString.IndexOf(".") ) + velString.Substring(velString.IndexOf("."), 3);
 		}
+		shotsText.text = "Shots Left: " + shotsLeft.ToString();
+
+		string scoreString = (transform.position.z + scoreAdjust).ToString();
+		string[] scoreSplitter = scoreString.Split ('.');
+		scoreText.text = "Score: " + scoreSplitter[0];
 	}
 	void FireProjectile()
 	{
