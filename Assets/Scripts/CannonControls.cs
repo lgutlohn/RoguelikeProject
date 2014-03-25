@@ -9,7 +9,7 @@ public class CannonControls : MonoBehaviour {
 		public GUIText rotText;
 		public GUIText velText;
 		public float rayDistance = 25f;
-		public float rotationSpeed = 5f;
+		public float rotationSpeed = 10f;
         public Transform target = null;
  		public Transform CannonBulletSpawn;
 	public bool fired = false;
@@ -55,7 +55,7 @@ public class CannonControls : MonoBehaviour {
 		}
 		
 		if(Input.GetKey(KeyCode.S)){
-			cannonPower--;
+			cannonPower-=2;
 		}
 	
 		if(Input.GetKeyDown(KeyCode.Space) && !fired && shotsLeft>0)
