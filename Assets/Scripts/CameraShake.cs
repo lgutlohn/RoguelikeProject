@@ -17,7 +17,7 @@ public class CameraShake : MonoBehaviour {
 	
 	void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= nextFireTime)
+		if(Input.GetKeyDown(KeyCode.Space) && Time.time >= nextFireTime)
 		{
 			nextFireTime = Time.time + reloadTime;
 			shake = shakeStrength;

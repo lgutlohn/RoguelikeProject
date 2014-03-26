@@ -19,7 +19,7 @@ public class nextLevel : MonoBehaviour {
 	{
 		if (other.tag == "Player") {
 						Destroy (other.gameObject);
-						Application.LoadLevel(0);
+						Application.LoadLevel(nextScene);
 				}
 	}
 }

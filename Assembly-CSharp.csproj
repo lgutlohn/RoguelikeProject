@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{2F3B3820-11DD-97A4-4C54-4A43E548107C}</ProjectGuid>
+	<ProjectGuid>{45F345C9-8CAF-05A0-121F-4DC9CC056A01}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -53,16 +53,26 @@
      <Compile Include="Assets\Scripts\CharacterControl.cs" />
      <Compile Include="Assets\Scripts\Destroy.cs" />
      <Compile Include="Assets\Scripts\Ice.cs" />
+     <Compile Include="Assets\Scripts\Level2Generation.cs" />
+     <Compile Include="Assets\Scripts\Level3Generation.cs" />
      <Compile Include="Assets\Scripts\ObjectGenerator.cs" />
+     <Compile Include="Assets\Scripts\Pace.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\RandomMove.cs" />
      <Compile Include="Assets\Scripts\ShootControls.cs" />
      <Compile Include="Assets\Scripts\SlowMotion.cs" />
      <Compile Include="Assets\Scripts\Teleport.cs" />
      <Compile Include="Assets\Scripts\Trampoline.cs" />
+     <Compile Include="Assets\Scripts\bulletImpact.cs" />
      <Compile Include="Assets\Scripts\generat0r.cs" />
      <Compile Include="Assets\Scripts\nextLevel.cs" />
+     <Compile Include="Assets\Scripts\powerup.cs" />
      <Compile Include="Assets\Scripts\rotation.cs" />
+     <Compile Include="Assets\Scripts\spikeCollider.cs" />
+     <Compile Include="Assets\Scripts\startSound.cs" />
+     <Compile Include="Assets\not assets\Assets\Scripts\GameOver.cs" />
+     <Compile Include="Assets\not assets\Assets\Scripts\Instructions.cs" />
+     <Compile Include="Assets\not assets\Assets\Scripts\Title.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

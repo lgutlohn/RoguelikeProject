@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Level3Generation.cs">
+    <Files>
+      <File FileName="Assets\Scripts\powerup.cs" Line="11" Column="69" />
+      <File FileName="Assets\not assets\Assets\Scripts\Instructions.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CannonControls.cs" Line="62" Column="35" />
+      <File FileName="Assets\Scripts\Pace.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\nextLevel.cs" Line="21" Column="34" />
+      <File FileName="Assets\Scripts\ObjectGenerator.cs" Line="23" Column="31" />
+      <File FileName="Assets\Scripts\Level2Generation.cs" Line="24" Column="3" />
+      <File FileName="Assets\Scripts\Level3Generation.cs" Line="13" Column="29" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
