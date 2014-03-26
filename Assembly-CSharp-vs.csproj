@@ -53,6 +53,8 @@
      <Compile Include="Assets\Scripts\CharacterControl.cs" />
      <Compile Include="Assets\Scripts\Destroy.cs" />
      <Compile Include="Assets\Scripts\Ice.cs" />
+     <Compile Include="Assets\Scripts\Level2Generation.cs" />
+     <Compile Include="Assets\Scripts\Level3Generation.cs" />
      <Compile Include="Assets\Scripts\ObjectGenerator.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\RandomMove.cs" />
@@ -62,7 +64,9 @@
      <Compile Include="Assets\Scripts\Trampoline.cs" />
      <Compile Include="Assets\Scripts\generat0r.cs" />
      <Compile Include="Assets\Scripts\nextLevel.cs" />
+     <Compile Include="Assets\Scripts\powerup.cs" />
      <Compile Include="Assets\Scripts\rotation.cs" />
+     <Compile Include="Assets\Scripts\spikeCollider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

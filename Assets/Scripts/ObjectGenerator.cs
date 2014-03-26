@@ -6,7 +6,7 @@ public class ObjectGenerator : MonoBehaviour {
 	//x: -59.5, 58.5
 	//z: -73, 138
 	
-	public Transform blocker, sphere, diagonalLeft, diagonalRight, goal;
+	public Transform cannon, blocker, sphere, diagonalLeft, diagonalRight, goal, powerup, invisWall;
 	public int counter1 = 0;
 	public int xMax = 58;
 	public int xMin = -59;
@@ -18,6 +18,8 @@ public class ObjectGenerator : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+
+
 				float randomnumber = Random.Range (0f, 100f);
 				//%chance to have blocker rotated one way or another
 				if (randomnumber > 50f){
@@ -31,7 +33,7 @@ public class ObjectGenerator : MonoBehaviour {
 				for (int i = xMax; i >= xMin; i-= gridIncrement) {
 					for (int j = zMax; j >= zMin; j-= gridIncrement) {
 						float random2 = Random.Range (0f, 100f);
-						if (random2 > 90f) {
+						if (random2 > 92f) {
 							Instantiate (sphere, new Vector3 (i, 1f, j), Quaternion.identity);
 							
 							
@@ -53,6 +55,19 @@ public class ObjectGenerator : MonoBehaviour {
 		//instantiate goal
 		float goalLocation = Random.Range (-20f, 20f);
 		Instantiate (goal, new Vector3 (goalLocation, -0.8237286f, 127.002f), Quaternion.identity);
+
+		//instantiate powerups + invisible wall
+		Instantiate (powerup, new Vector3 (-50.99167f, -1.606247f, -55.4191f), Quaternion.identity);
+		Instantiate (powerup, new Vector3 (50.99167f, -1.606247f, -55.4191f), Quaternion.identity);
+
+		float randomWall = Random.Range (0f, 100f);
+		if (randomWall > 50f) {
+			Instantiate (invisWall, new Vector3(-32.87909f, 0.1531696f, -53.05298f), Quaternion.identity);
+				}
+		else{
+			Instantiate (invisWall, new Vector3(32.87909f, 0.1531696f, -53.05298f), Quaternion.identity);
+		}
+
 
 
 

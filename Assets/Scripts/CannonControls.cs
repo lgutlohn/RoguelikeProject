@@ -8,10 +8,13 @@ public class CannonControls : MonoBehaviour {
 		public float cannonPower = 100f;
 		public GUIText rotText;
 		public GUIText velText;
+		public GUIText shotCounter;
 		public float rayDistance = 25f;
 		public float rotationSpeed = 1.5f;
         public Transform target = null;
  		public Transform CannonBulletSpawn;
+	public float shotsLeft;
+
  	//private Quaternion desiredRotation;
  		public GameObject Bullet;
             // Use this for initialization
@@ -55,7 +58,9 @@ public class CannonControls : MonoBehaviour {
 		if(Time.time >= nextFireTime && Input.GetKeyDown(KeyCode.Space))
  
                     {
-			FireProjectile ();  
+			shotsLeft -= 1;
+			FireProjectile ();
+			//TODO: game over screen when bulletcount = bulletmax
 		 
                     }
 
@@ -72,6 +77,9 @@ public class CannonControls : MonoBehaviour {
 		if ((velString.IndexOf(".") > -1) && (velString.Length>velString.IndexOf(".")+ 4)) {
 			velText.text = "Velocity: " + velString.Substring(0, velString.IndexOf(".") ) + velString.Substring(velString.IndexOf("."), 3);
 		}
+
+		string shotString = shotsLeft.ToString ();
+		shotCounter.text = "Shots Left : " + shotString;
 	}
 	void FireProjectile()
 	{
