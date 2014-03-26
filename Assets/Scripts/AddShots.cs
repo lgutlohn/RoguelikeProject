@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class AddShots : MonoBehaviour {
-	public CannonControls cannon;
+
 
 	// Use this for initialization
 	void Start () {
@@ -14,8 +14,9 @@ public class AddShots : MonoBehaviour {
 	
 	}
 	void OnTriggerEnter(Collider other){
+		GameObject cannon = GameObject.Find("Cannon");
 		if (other.tag == "Bullet") {
-			cannon.shotsLeft++;
+			cannon.GetComponent<CannonControls>().shotsLeft++;
 			GameObject.Destroy (this.gameObject);
 		}
 

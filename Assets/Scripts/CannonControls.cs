@@ -17,6 +17,8 @@ public class CannonControls : MonoBehaviour {
 	public GUIText shotsText;
 	public GUIText scoreText;
 	public float scoreAdjust;
+	public int Level = 1;
+	public string score = "0";
  	//private Quaternion desiredRotation;
  		public GameObject Bullet;
             // Use this for initialization
@@ -29,7 +31,7 @@ public class CannonControls : MonoBehaviour {
  
             // Update is called once per frame
  
-            void Update () {
+            void FixedUpdate () {
 		/*Ray ray = new Ray(CannonBulletSpawn.position, transform.forward);
 		//Debug.DrawLine(ray.origin, ray.direction * rayDistance, Color.red);
 		RaycastHit rayHit = new RaycastHit();
@@ -58,7 +60,7 @@ public class CannonControls : MonoBehaviour {
 			cannonPower-=2;
 		}
 	
-		if(Input.GetKeyDown(KeyCode.Space) && !fired && shotsLeft>0)
+		if(Input.GetKey(KeyCode.Space) && !fired && shotsLeft>0)
  
        	{
 
@@ -86,6 +88,7 @@ public class CannonControls : MonoBehaviour {
 		string scoreString = (transform.position.z + scoreAdjust).ToString();
 		string[] scoreSplitter = scoreString.Split ('.');
 		scoreText.text = "Score: " + scoreSplitter[0];
+		score = scoreSplitter [0];
 	}
 	void FireProjectile()
 	{

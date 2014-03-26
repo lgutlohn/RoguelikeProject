@@ -16,6 +16,9 @@ public class InstanceGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		GameObject cannon = GameObject.Find("Cannon");
+		int level = cannon.GetComponent<CannonControls> ().Level;
+		Debug.Log ("Level " + level.ToString ());
 		gridEnd = transform.position.z + transform.root.renderer.bounds.size.z+(125/2);
 		gridStart = transform.position.z+(125/2);
 		gridRight = 30;
@@ -30,7 +33,7 @@ public class InstanceGenerator : MonoBehaviour {
 				//random number to see if instantiate
 				float randomnumber = Random.Range (0f, 100f);
 				//%chance to instantiate
-				if (randomnumber > 99f){
+				if (randomnumber > 100f-level){
 					Instantiate (Capsule, new Vector3(j, 2f, i), Quaternion.identity);
 				}
 			}
@@ -44,7 +47,7 @@ public class InstanceGenerator : MonoBehaviour {
 			}
 			for (float j = gridRight; j >= gridLeft; j-= gridIncrement){
 				float randomnumber = Random.Range (0f, 100f);
-				if (randomnumber > 90f){
+				if (randomnumber > 90f-level){
 					Instantiate (Cube, new Vector3(j, 2f, i), Quaternion.identity);
 					counter1++;
 					//Debug.Log("Counter = " + counter1);
@@ -57,7 +60,7 @@ public class InstanceGenerator : MonoBehaviour {
 		for (float i = gridEnd; i >= gridStart; i-= gridIncrement) {
 			for (float j = gridRight; j >= gridLeft; j-= gridIncrement) {
 				float randomnumber = Random.Range (0f, 100f);
-				if (randomnumber > 90f) {
+				if (randomnumber > 100f-((float)level/10f)) {
 					Instantiate (Cylinder, new Vector3 (j, 2f, i), Quaternion.identity);
 					
 					
@@ -67,17 +70,17 @@ public class InstanceGenerator : MonoBehaviour {
 		}
 		//use for an exact number of objects
 		//randomly spawns set number of an object within an area
-		while (counter2 < 10){
+		while (counter2 < 10+level){
 			Instantiate (Sphere, new Vector3(Random.Range(gridLeft,gridRight), 2f, (Random.Range (gridEnd,gridStart))), Quaternion.identity);
 			counter2++;
 		}
-		while (boostCounter < 10){
+		while (boostCounter < 10+level){
 			Instantiate (BoostPad, new Vector3(Random.Range(gridLeft,gridRight), 2f, (Random.Range (gridEnd,gridStart))), Quaternion.Euler(new Vector3(0,Random.Range(90,270),0)));
-			
+			Debug.Log(boostCounter.ToString());
 			boostCounter++;
 		}
-		while (powerUpCounter < 5){
-			Instantiate (PowerUp, new Vector3(Random.Range(gridLeft,gridRight), 5f, (Random.Range (gridEnd,gridStart))), Quaternion.Euler(new Vector3(0,Random.Range(90,270),0)));
+		while (powerUpCounter < 10){
+			Instantiate (PowerUp, new Vector3(Random.Range(gridLeft,gridRight), 3f, (Random.Range (gridEnd,gridStart))), Quaternion.Euler(new Vector3(0,Random.Range(90,270),0)));
 			
 			powerUpCounter++;
 		}

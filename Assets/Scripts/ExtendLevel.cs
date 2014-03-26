@@ -8,6 +8,7 @@ public class ExtendLevel : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 	
 	}
 	
@@ -21,8 +22,10 @@ public class ExtendLevel : MonoBehaviour {
 	
 	}
 	void OnCollisionEnter(Collision other){
+		GameObject cannon = GameObject.Find("Cannon");
 		if (other.gameObject.tag == "Bullet") {
 			hitTime = Time.time;
+			cannon.GetComponent<CannonControls>().Level++;
 		}
 
 	}
